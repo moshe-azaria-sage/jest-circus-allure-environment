@@ -1,3 +1,5 @@
+This is a fork from https://github.com/ryparker/jest-circus-allure-reporter that adapts it to `jest` 29. It's has a few minor changes, like `"skipLibCheck": true` and adapt types in `allure-base-environment.ts and allure-node-environment.ts`. PRs are welcome.
+
 # Jest Circus Allure Environment
 
 [![jest](https://jestjs.io/img/jest-badge.svg)](https://github.com/facebook/jest)
