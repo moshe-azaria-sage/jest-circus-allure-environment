@@ -2,7 +2,7 @@ import {basename} from 'path';
 import {AllureRuntime, IAllureConfig} from 'allure-js-commons';
 import type {Circus, Config} from '@jest/types';
 
-import type {EnvironmentContext, JestEnvironment} from '@jest/environment';
+import type {EnvironmentContext, JestEnvironment, JestEnvironmentConfig} from '@jest/environment';
 import AllureReporter from './allure-reporter';
 
 function extendAllureBaseEnvironment<TBase extends typeof JestEnvironment>(Base: TBase): TBase {
@@ -13,18 +13,18 @@ function extendAllureBaseEnvironment<TBase extends typeof JestEnvironment>(Base:
 		private readonly testPath: string;
 		private readonly testFileName: string;
 
-		constructor(config: Config.ProjectConfig, context: EnvironmentContext) {
+		constructor(config: JestEnvironmentConfig, context: EnvironmentContext) {
 			super(config, context);
 
-			if (typeof config.testEnvironmentOptions.testPath === 'string') {
-				this.testPath = config.testEnvironmentOptions.testPath;
+			if (typeof config.projectConfig.testEnvironmentOptions.testPath === 'string') {
+				this.testPath = config.projectConfig.testEnvironmentOptions.testPath;
 			}
 
-			this.testPath = this.initializeTestPath(config, context);
+			this.testPath = this.initializeTestPath(config.projectConfig, context);
 
 			this.testFileName = basename(this.testPath);
 
-			this.reporter = this.initializeAllureReporter(config);
+			this.reporter = this.initializeAllureReporter(config.projectConfig);
 
 			this.global.allure = this.reporter.getImplementation();
 		}

@@ -2,12 +2,12 @@
   "compilerOptions": {
     "lib": ["es2019", "dom"],
     "target": "es2019",
+    "skipLibCheck": true,
     "module": "commonjs",
     "moduleResolution": "node",
     "declaration": true,
     "sourceMap": true,
     "isolatedModules": true,
-    "importsNotUsedAsValues": "error",
     "esModuleInterop": false,
     "noImplicitReturns": true,
     "resolveJsonModule": true,
