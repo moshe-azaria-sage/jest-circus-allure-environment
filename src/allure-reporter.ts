@@ -14,7 +14,7 @@ import {
 	Status
 } from 'allure-js-commons';
 import {parseWithComments} from 'jest-docblock';
-import stripAnsi = require('strip-ansi');
+import stripAnsi from 'strip-ansi';
 import _ = require('lodash');
 import prettier = require('prettier/standalone');
 import parser = require('prettier/parser-typescript');
