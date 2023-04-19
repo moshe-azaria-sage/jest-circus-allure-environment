@@ -1,5 +1,7 @@
 # Changelog
 
+## [2.0.0](https://github.com/moshe-azaria-sage/jest-circus-allure-environment/releases/tag/v2.0.0) (2023-04-18)
+
 ## [1.1.1](https://github.com/ryparker/jest-circus-allure-environment/compare/v1.1.0...v1.1.1) (2021-06-02)
 
 
