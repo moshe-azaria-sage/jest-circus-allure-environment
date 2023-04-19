@@ -7,10 +7,14 @@ test.skip('Expect to skip', () => {
 });
 
 test('Expect to fail', () => {
+	if (process.env.CI === "true")
+		return;
 	expect(2 + 2).toBe(6);
 });
 
 test('Expect to break', () => {
+	if (process.env.CI === "true")
+		return;
 	expect(3 + 2).toBe(5);
 	foo.bar;
 });
