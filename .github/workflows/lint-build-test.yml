@@ -1,0 +1,29 @@
+name: Install-Lint-Build-Test
+
+on:
+  pull_request:
+    paths:
+      - 'src/**/*'
+    types: [opened, reopened, synchronize]
+    
+jobs:
+  pr:
+    runs-on: ubuntu-latest
+    env:
+      CI: true
+      NODE_VERSION: 18
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'yarn'
+      - run: yarn install --immutable --immutable-cache --check-cache
+      - name: Lint
+        run: yarn lint
+      - name: Build
+        run: yarn build
+      - name: Test
+        run: yarn test
