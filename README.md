@@ -44,7 +44,7 @@ A Jest Circus environment for Allure reporting.
 1. **Add this package**
 
 ```shell
-yarn add --dev jest-circus-allure-environment
+yarn add --dev @moshisho/jest-circus-allure-environment
 ```
 
 2. **Update `jest.config.js`**
@@ -53,7 +53,7 @@ _See the [testEnvironment docs](https://jestjs.io/docs/en/configuration#testenvi
 
 ```JSON
 {
-  "testEnvironment": "jest-circus-allure-environment",
+  "testEnvironment": "@moshisho/jest-circus-allure-environment",
   "testRunner": "jest-circus/runner"
 }
 ```
@@ -96,8 +96,8 @@ test('2 + 3 is 5', () => {
 ```js
 // jest.setup.js
 
-import 'jest-circus-allure-environment' // Typescript or ESM
-require('jest-circus-allure-environment') // CommonJS
+import '@moshisho/jest-circus-allure-environment' // Typescript or ESM
+require('@moshisho/jest-circus-allure-environment') // CommonJS
 ```
 
 2. **Make sure your `jest.setup.js` file is properly configured.**
