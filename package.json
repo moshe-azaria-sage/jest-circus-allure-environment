@@ -89,7 +89,7 @@
     "jest-docblock": "^29.4.3",
     "jest-environment-node": "^29.5.0",
     "lodash": "^4.17.21",
-    "prettier": "^2.3.0",
+    "prettier": "^3.8.2",
     "pretty-format": "^27.0.2",
     "strip-ansi": "^6.0.0"
   },
